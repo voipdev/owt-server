@@ -7,4 +7,6 @@ services:
     network_mode: host
     ports:
       - "3004:3004"
+    command: sh -c "service mongodb start && service rabbitmq-server start \
+                    && cd /home/owt/bin && ./init-all.sh && ./start-all.sh && sleep infinity"
         
